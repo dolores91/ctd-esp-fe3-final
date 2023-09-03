@@ -13,8 +13,9 @@ const faqs: NextPage<FaqProps> = ({ faq }) => {
     return (
         <>
             <Head>
-                <title>Preguntas frecuentes | DH MARVEL</title>
+                <title>Preguntas frecuentes</title>
                 <meta name="description" content="Preguntas frecuentes sobre DH MARVEL" />
+                <link rel="icon" href="/marvel.png" />
             </Head>
             <Box sx={{ p: 2 }}>
                 <Box width="100%" display="flex" alignItems="center" justifyContent="center" sx={{ p: 2 }}>
@@ -60,7 +61,10 @@ type FaqProps = {
     faq: Faq[]
 }
 export default faqs
-/*- Si te animás a Storybook, podes crear un componente Faqs junto con su story, para visualizarlo
+/*- 
+VER SI TENIA Q HACER API SI O SI,
+SINO BORRAR ARCHIVO DE API
+Si te animás a Storybook, podes crear un componente Faqs junto con su story, para visualizarlo
     - El mismo deberia recibir un array de Faqs, un objeto que deberiamos tipar
     - Renderizar por cada FAQ un item del `accordion`
     - Con el componente listo, ya podemos proceder a utilizarlo dentro de las página
