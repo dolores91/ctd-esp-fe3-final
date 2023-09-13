@@ -10,12 +10,12 @@ interface IComicCardProps {
 
 const ComicCard: FC<IComicCardProps> = ({ title, image, id }) => {
     return (
-        <Card variant="outlined">
+        <Card sx={{ maxWidth: 345 }}>
             <CardMedia
                 component="img"
-                height="194"
+                height="300"
+                alt="Foto portada del cómic"
                 image={image}
-                alt={title}
                 sx={{ objectFit: 'contain' }}
             />
             <CardContent>
@@ -23,6 +23,7 @@ const ComicCard: FC<IComicCardProps> = ({ title, image, id }) => {
                     {title}
                 </Typography>
             </CardContent>
+
             <CardActions>
                 <Button size="small" variant="contained">
                     COMPRAR
@@ -33,7 +34,7 @@ const ComicCard: FC<IComicCardProps> = ({ title, image, id }) => {
                     </Button>
                 </Link>
             </CardActions>
-        </Card>
+        </Card >
     );
 };
 
