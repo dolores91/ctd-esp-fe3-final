@@ -6,7 +6,7 @@ import { IComic } from 'types/IComic.type';
 import { Stack } from '@mui/material';
 import BodySingle from 'dh-marvel/components/layouts/body/single/body-single';
 import GridLayout from 'dh-marvel/components/grid/Grid';
-import PaginationComponent from 'dh-marvel/components/pagination/PaginationComponent'
+import PaginationComponent from 'dh-marvel/components/pagination/Pagination'
 
 interface HomeProps {
     comics: IComic[];
@@ -37,8 +37,12 @@ const Index: NextPage<HomeProps> = ({ comics, total, offset, limit }) => {
                         limit={limit}
                     ></PaginationComponent>
                     <GridLayout comics={comics}></GridLayout>
-
-                </Stack>
+                    <PaginationComponent
+                        total={total}
+                        offset={offset}
+                        limit={limit}
+                    ></PaginationComponent>
+                </Stack>e
             </BodySingle>
         </>
     );
