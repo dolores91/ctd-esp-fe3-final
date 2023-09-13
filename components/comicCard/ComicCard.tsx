@@ -2,13 +2,13 @@ import React, { FC } from 'react';
 import Link from 'next/link';
 import { Card, Typography, Button, CardMedia, CardContent, CardActions } from '@mui/material';
 
-interface IComicCardProps {
+interface CCProps {
     title: string;
     image: string;
     id: number;
 }
 
-const ComicCard: FC<IComicCardProps> = ({ title, image, id }) => {
+const ComicCard: FC<CCProps> = ({ title, image, id }) => {
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia

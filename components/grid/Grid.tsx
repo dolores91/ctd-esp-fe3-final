@@ -3,11 +3,11 @@ import { Grid } from '@mui/material';
 import { IComic } from 'types/IComic.type';
 import ComicCard from '../comicCard/ComicCard';
 
-interface GridProps {
+interface GProps {
     comics: IComic[],
 }
 
-const GridLayout: FC<GridProps> = ({ comics }) => {
+const GridLayout: FC<GProps> = ({ comics }) => {
 
     return (
         <Grid container spacing={{ xs: 2 }} sx={{ marginBottom: "15px" }}>

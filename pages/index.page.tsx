@@ -8,16 +8,15 @@ import BodySingle from 'dh-marvel/components/layouts/body/single/body-single';
 import GridLayout from 'dh-marvel/components/grid/Grid';
 import PaginationComponent from 'dh-marvel/components/pagination/Pagination'
 
-interface HomeProps {
+const QComics = 12;
+interface HProps {
     comics: IComic[];
     total: number;
     offset: number;
     limit: number;
 }
 
-const QTY_OF_COMICS = 12;
-
-const Index: NextPage<HomeProps> = ({ comics, total, offset, limit }) => {
+const Index: NextPage<HProps> = ({ comics, total, offset, limit }) => {
     useEffect(() => {
         localStorage.clear();
     }, []);
@@ -50,14 +49,14 @@ const Index: NextPage<HomeProps> = ({ comics, total, offset, limit }) => {
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
     const offset = query.offset ? parseInt(query.offset as string, 10) : 0;
-    const comics = await getComics(offset, QTY_OF_COMICS);
+    const comics = await getComics(offset, QComics);
 
     return {
         props: {
             comics: comics.data.results,
             total: comics.data.total,
             offset,
-            limit: QTY_OF_COMICS,
+            limit: QComics,
         },
     };
 };
