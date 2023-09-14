@@ -8,6 +8,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Head from 'next/head'
 
 
 interface CharacterProps {
@@ -24,17 +25,27 @@ const Character: FC<CharacterProps> = ({ character }) => {
     setExpanded(isExpanded ? panel : false);
   };
 
-  return (
+  return (<>
+    <Head>
+      <title>personaje | DH MARVEL</title>
+      <meta name="description" content={`Marvel character: ${character.name}`} />
+      <link rel="icon" href="/marvel.png" />
+    </Head>
     <BodySingle title={`Personaje: ${character.name}`}>
-      <Card sx={{ maxWidth: '600px', margin: '0 auto' }}>
+      <Card sx={{ maxWidth: '800px', margin: '0 auto' }}>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={6} md={4}>
             <CardMedia
               component="img"
-              height="350"
+              height="450"
               image={`${character.thumbnail.path}.${character.thumbnail.extension}`}
               alt={character.name}
-              sx={{ objectFit: 'contain', borderRadius: '15px' }}
+              sx={{
+                objectFit: 'contain',
+                borderRadius: '15px',
+                marginLeft: '8px',
+                marginRight: '16px',
+              }}
             />
           </Grid>
           <Grid item xs={12} md={8} sx={{ alignSelf: 'center' }}>
@@ -90,7 +101,7 @@ const Character: FC<CharacterProps> = ({ character }) => {
         </Grid>
       </Card>
     </BodySingle>
-  );
+  </>);
 };
 
 
