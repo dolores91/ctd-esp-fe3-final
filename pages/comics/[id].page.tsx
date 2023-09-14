@@ -22,7 +22,7 @@ const Comic: NextPage<ComicProps> = ({ comic }) => {
     return (
         <>
             <Head>
-                <title>Detalle | DH MARVEL</title>
+                <title>Comic | DH MARVEL</title>
                 <meta name="description" content={`Marvel comic: ${comic.title}`} />
                 <link rel="icon" href="/marvel.png" />
             </Head>
