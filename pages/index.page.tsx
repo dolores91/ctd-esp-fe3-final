@@ -29,7 +29,7 @@ const Index: NextPage<HProps> = ({ comics, total, offset, limit }) => {
                 <link rel="icon" href="/marvel.png" />
             </Head>
             <BodySingle title={'DH MARVEL'}>
-                <Stack alignItems="center" spacing={0} margin="0">
+                <Stack alignItems="center" spacing={0} marginLeft="50px">
                     <PaginationComponent
                         total={total}
                         offset={offset}
@@ -41,7 +41,7 @@ const Index: NextPage<HProps> = ({ comics, total, offset, limit }) => {
                         offset={offset}
                         limit={limit}
                     ></PaginationComponent>
-                </Stack>e
+                </Stack>
             </BodySingle>
         </>
     );
