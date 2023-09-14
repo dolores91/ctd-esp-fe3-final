@@ -9,14 +9,17 @@ interface CCProps {
 }
 
 const ComicCard: FC<CCProps> = ({ title, image, id }) => {
+    const handleVerDetalleClick = () => {
+        console.log(`/comics/${id}`);
+    };
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia
                 component="img"
-                height="300"
+                height="350"
                 alt="Foto portada del cómic"
                 image={image}
-                sx={{ objectFit: 'contain' }}
+                sx={{ borderRadius: '16px' }}
             />
             <CardContent>
                 <Typography gutterBottom variant="body2" component="div">
@@ -24,15 +27,15 @@ const ComicCard: FC<CCProps> = ({ title, image, id }) => {
                 </Typography>
             </CardContent>
 
-            <CardActions>
-                <Button size="small" variant="contained">
-                    COMPRAR
-                </Button>
+            <CardActions sx={{ justifyContent: 'center' }}> {/* Centrar los botones */}
                 <Link href={`/comics/${id}`}>
-                    <Button size="small" variant="outlined">
+                    <Button size="small" variant="outlined" onClick={handleVerDetalleClick}>
                         VER DETALLE
                     </Button>
                 </Link>
+                <Button size="small" variant="contained">
+                    COMPRAR
+                </Button>
             </CardActions>
         </Card >
     );
