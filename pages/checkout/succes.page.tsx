@@ -50,7 +50,7 @@ const CheckoutSuccess: NextPage = () => {
 
           <CardSuccess data={dataCheckout} />
           <Typography variant="h5" marginTop={"20px"}>
-            Precio total pagado: ${precio}
+            Monto total pagado: ${precio}
           </Typography>
           <Link href="/">
             <Button size="small" variant="outlined" sx={{ margin: '30px 0px' }}>
