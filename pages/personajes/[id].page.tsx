@@ -79,12 +79,12 @@ const Character: FC<CharacterProps> = ({ character }) => {
                 aria-controls="comics-panel-content"
                 id="comics-panel-header"
               >
-                <Typography variant="body2">`Otros comics </Typography>
+                <Typography variant="body2">Otros comics</Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <Typography variant="body2">
                   {character.comics.items.length ? (
-                    character.comics.items.map((comic) => {
+                    character.comics.items.slice(0, 6).map((comic) => {
                       return (
                         <p key={comic.name}>{comic.name}</p>
                       );
@@ -97,6 +97,7 @@ const Character: FC<CharacterProps> = ({ character }) => {
                 </Typography>
               </AccordionDetails>
             </Accordion>
+
           </Grid>
         </Grid>
       </Card>
