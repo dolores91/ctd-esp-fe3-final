@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { IComic } from "types/IComic.type";
 import { Paper, CardContent, Typography, Button, Grid, Box } from "@mui/material";
 import Link from "next/link";
-import ComicDetailAccordion from "./ComicDetailAccordion";
+import ComicDetailAccordion from "../accordion/ComicDetailAccordion";
 
 interface ComicCardDetailProps {
   comic: IComic;
