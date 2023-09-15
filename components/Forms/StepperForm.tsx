@@ -3,12 +3,12 @@ import { useRouter } from 'next/router';
 import { IAddress, ICard, ICheckout, ICustomer } from 'types/ICheckout.type';
 import { checkOutPost } from 'dh-marvel/services/checkout/checkout.service';
 import { IComic } from 'types/IComic.type';
-import CustomerDataForm from './datosPersonales/Step1';
-import DeliveryForm from './domicilio/Step2';
-import PaymentForm from './pago/Step3';
-import { Box, Typography, Stepper, Step, StepButton, Alert, Snackbar } from '@mui/material';
+import Step1 from './datosPersonales/Step1';
+import Step2 from './domicilio/Step2';
+import Step3 from './pago/Step3';
+import { Box, Stepper, Step, StepButton, Alert, Snackbar } from '@mui/material';
 import catchError from './handleCheckoutErros';
-import { RESPONSE_LIMIT_DEFAULT } from 'next/dist/server/api-utils';
+
 
 const steps = ['Datos Personales', 'Dirección de envio', 'Datos del pago'];
 
@@ -120,7 +120,7 @@ const StepperForm: FC<StepperForm> = ({ comic }) => {
           })
         );
         router.push({
-          pathname: '/confirmacion-compra',
+          pathname: '/checkout/succes',
         });
       }
     });
@@ -156,23 +156,15 @@ const StepperForm: FC<StepperForm> = ({ comic }) => {
         ))}
       </Stepper>
       <Box>
-        <Typography
-          sx={{
-            paddingBottom: '10px',
-          }}
-          variant="h5"
-        >
-          Paso {activeStep + 1}
-        </Typography>
         {activeStep === 0 && (
-          <CustomerDataForm
+          <Step1
             data={checkoutData.customer}
             activeStep={activeStep}
             handleNext={handleSubmitCustomerForm}
           />
         )}
         {activeStep === 1 && (
-          <DeliveryForm
+          <Step2
             data={checkoutData.customer.address}
             activeStep={activeStep}
             handleBack={handleBack}
@@ -180,7 +172,7 @@ const StepperForm: FC<StepperForm> = ({ comic }) => {
           />
         )}
         {activeStep === 2 && (
-          <PaymentForm
+          <Step3
             activeStep={activeStep}
             handleBack={handleBack}
             handleNext={handleSubmitPaymentForm}

@@ -79,7 +79,7 @@ const Character: FC<CharacterProps> = ({ character }) => {
                 aria-controls="comics-panel-content"
                 id="comics-panel-header"
               >
-                <Typography variant="body2">Cómics</Typography>
+                <Typography variant="body2">`Otros comics </Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <Typography variant="body2">

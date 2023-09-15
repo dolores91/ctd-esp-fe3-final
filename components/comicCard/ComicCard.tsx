@@ -12,6 +12,9 @@ const ComicCard: FC<CCProps> = ({ title, image, id }) => {
     const handleVerDetalleClick = () => {
         console.log(`/comics/${id}`);
     };
+    const handleComprarClick = () => {
+        console.log(`Compra directa del cómic con ID: ${id}`);
+    };
     return (
         <Card sx={{ maxWidth: 345 }}>
             <CardMedia
@@ -27,15 +30,16 @@ const ComicCard: FC<CCProps> = ({ title, image, id }) => {
                 </Typography>
             </CardContent>
 
-            <CardActions sx={{ justifyContent: 'center' }}> {/* Centrar los botones */}
+            <CardActions sx={{ justifyContent: 'center' }}>
                 <Link href={`/comics/${id}`}>
                     <Button size="small" variant="outlined" onClick={handleVerDetalleClick}>
                         VER DETALLE
                     </Button>
                 </Link>
-                <Button size="small" variant="contained">
-                    COMPRAR
-                </Button>
+                <Link href={{ pathname: "/checkout/", query: `comic=${id}` }}>
+                    <Button onClick={handleComprarClick} size="small" variant="contained">
+                        COMPRAR
+                    </Button></Link>
             </CardActions>
         </Card >
     );

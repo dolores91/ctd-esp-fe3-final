@@ -1,13 +1,6 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { IComic } from 'types/IComic.type';
-import {
-  Paper,
-  CardContent,
-  Typography,
-  Card,
-  CardMedia,
-  Skeleton,
-} from '@mui/material';
+import { Paper, CardContent, Typography, Card, CardMedia, Box } from '@mui/material';
 
 type CardCheckoutProps = {
   comic: IComic | undefined;
@@ -17,49 +10,33 @@ const CardCheckout: FC<CardCheckoutProps> = ({ comic }) => {
   return (
     <Paper elevation={1}>
       <Card>
-        {!comic ? (
-          <Skeleton
-            sx={{ height: 194, minWidth: '100%' }}
-            animation="wave"
-            variant="rectangular"
-            data-testid="skeleton-image"
-          />
-        ) : (
-          <CardMedia
-            component="img"
-            alt={comic.title}
-            height="194"
-            image={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
-            sx={{ objectFit: 'contain' }}
-          />
+        {comic && (
+          <>
+            <CardMedia
+              component="img"
+              alt={comic.title}
+              height="200"
+              image={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+              sx={{
+                objectFit: 'contain',
+                minWidth: '100%',
+                marginTop: '8px',
+              }}
+            />
+            <CardContent sx={{ textAlign: 'center' }}>
+              <Typography variant="body2" color="text.secondary">
+                {comic.title} -{' '}
+                <span style={{ fontWeight: 'bold' }}>$ {comic.price}</span>
+              </Typography>
+            </CardContent>
+          </>
         )}
-        <CardContent>
-          {!comic ? (
-            <Skeleton
-              sx={{ height: 25, minWidth: '100%' }}
-              animation="wave"
-              variant="rectangular"
-              data-testid="skeleton-title"
-            />
-          ) : (
-            <Typography variant="body2" color="text.secondary">
-              {comic.title}
-            </Typography>
-          )}
-          {!comic ? (
-            <Skeleton
-              sx={{ height: 25, minWidth: '100%' }}
-              animation="wave"
-              variant="rectangular"
-              data-testid="skeleton-price"
-            />
-          ) : (
-            <Typography variant="body1">$ {comic.price}</Typography>
-          )}
-        </CardContent>
       </Card>
     </Paper>
   );
 };
 
 export default CardCheckout;
+
+
+

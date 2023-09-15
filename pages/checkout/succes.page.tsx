@@ -4,24 +4,28 @@ import Head from 'next/head'
 import { useRouter } from 'next/router';
 import { ICheckout } from 'types/ICheckout.type';
 import Link from 'next/link';
-import { Button, Stack, Typography } from '@mui/material';
+import { Button, Stack, Typography, Box } from '@mui/material';
 import CardSuccess from 'dh-marvel/components/comicCard/CardSuccess';
 import LayoutCheckout from 'dh-marvel/components/layouts/layout-checkout';
+
 
 const CheckoutSuccess: NextPage = () => {
   const router = useRouter();
   const [dataCheckout, setDataCheckout] = useState<ICheckout>();
+  const precio = dataCheckout?.order.price
 
   useEffect(() => {
     const data = localStorage.getItem('checkoutData');
+
     if (data !== null) {
       const obj = JSON.parse(data);
       setDataCheckout(obj);
     } else {
-      alert("error localStorage")
+      alert("Acción no válida")
       router.push('/');
     }
   }, []);
+
 
   return (<>
     <Head>
@@ -37,15 +41,25 @@ const CheckoutSuccess: NextPage = () => {
     >
       {dataCheckout ? (
         <>
+          <Typography variant="h5" sx={{ color: 'green', fontWeight: 'bold' }}>
+            Orden confirmada
+          </Typography>
+          <Typography variant="h5" sx={{ color: 'green', fontWeight: 'bold', fontStyle: 'italic', marginBottom: "20px" }}>
+            ¡Que disfrutes tu compra!
+          </Typography>
+
           <CardSuccess data={dataCheckout} />
+          <Typography variant="h5" marginTop={"20px"}>
+            Precio total pagado: ${precio}
+          </Typography>
           <Link href="/">
             <Button size="small" variant="outlined" sx={{ margin: '30px 0px' }}>
-              Volver al home
+              Seguir comprando
             </Button>
           </Link>
         </>
       ) : (
-        <Typography variant="body2">Redirigiendo...</Typography>
+        <Typography variant="body2">Cargando</Typography>
       )}
     </Stack>
   </>);
