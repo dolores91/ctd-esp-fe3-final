@@ -60,9 +60,3 @@ type FaqProps = {
     faq: Faq[]
 }
 export default faqs
-/*- Si te animás a Storybook, podes crear un componente Faqs junto con su story, para visualizarlo
-    - El mismo deberia recibir un array de Faqs, un objeto que deberiamos tipar
-    - Renderizar por cada FAQ un item del `accordion`
-    - Con el componente listo, ya podemos proceder a utilizarlo dentro de las página
-  - Finalmente, si bien no es obligatorio, este es un componente simple para testear, para mantener alto nuestro coverage y dar por cerrada esta función.
-   */

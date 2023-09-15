@@ -18,6 +18,7 @@ const Comic: NextPage<ComicProps> = ({ comic }) => {
     if (router.isFallback === true) {
         return <Typography>Loading Comic...</Typography>
     }
+    console.log(comic);
 
     return (
         <>
