@@ -7,7 +7,7 @@ interface CCProps {
     image: string;
     id: number;
 }
-
+ 
 const ComicCard: FC<CCProps> = ({ title, image, id }) => {
     const handleVerDetalleClick = () => {
         console.log(`/comics/${id}`);
