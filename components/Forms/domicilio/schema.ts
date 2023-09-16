@@ -3,7 +3,6 @@ import { errorMesages } from "./errorMessages";
 
 const deliverySchema = yup
   .object({
-    //address: yup.string().required(errorMesages.address.required),
     address: yup.string().nullable(),
     city: yup.string().required(errorMesages.city.required),
     state: yup.string().required(errorMesages.state.required),

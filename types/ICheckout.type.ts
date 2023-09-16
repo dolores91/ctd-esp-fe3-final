@@ -8,12 +8,11 @@ export interface ICustomer {
   name: string;
   lastname: string;
   email: string;
-  address?: IAddress;
+  address: IAddress;
 }
 
 export interface IAddress {
   address: string;
-  //address: string | null;
   city: string;
   state: string;
   zipCode: string;
