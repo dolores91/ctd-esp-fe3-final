@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ICheckout } from 'types/ICheckout.type';
-import { Box, Card, Typography, CardMedia, CardContent, Paper, Grid } from '@mui/material';
+import { Card, Typography, CardMedia, CardContent, Paper, Grid } from '@mui/material';
 
 type CardSuccessProps = {
   data: ICheckout;

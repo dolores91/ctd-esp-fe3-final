@@ -45,7 +45,7 @@
     "**/*.ts",
     "**/*.tsx",
     "types.d.ts"
-  ],
+, "pages/faqs/.page.tsx"  ],
   "exclude": [
     "node_modules"
   ]

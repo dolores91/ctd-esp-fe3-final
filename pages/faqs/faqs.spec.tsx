@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import Faqs from "dh-marvel/pages/faqs.page";
-import { faqsData } from "../components/faqs/faqsData";
+import Faqs from "dh-marvel/pages/faqs/index.page";
+import { faqsData } from "../../components/faqs/faqsData";
 import userEvent from "@testing-library/user-event";
 
 describe("Al renderizar FaqsPage", () => {

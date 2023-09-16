@@ -13,7 +13,7 @@ const ComicCard: FC<CCProps> = ({ title, image, id }) => {
         console.log(`/comics/${id}`);
     };
     const handleComprarClick = () => {
-        console.log(`Compra directa del cómic con ID: ${id}`);
+        console.log(`Compra directa el cómic con ID: ${id}`);
     };
     return (
         <Card sx={{ maxWidth: 345 }}>

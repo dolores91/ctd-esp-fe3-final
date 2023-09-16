@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import Head from 'next/head';
 import Box from '@mui/material/Box';
 import { GetStaticProps, NextPage } from 'next';
-import { faqsData } from '../components/faqs/faqsData'
+import { faqsData } from '../../components/faqs/faqsData'
 import { Container } from '@mui/material';
 import AccordionFaq from 'dh-marvel/components/accordion/AccordionFaq';
 
