@@ -1,23 +1,22 @@
 export type ICheckout = {
-    customer: ICustomer;
-    card: ICard;
-    order: IOrder;
+  customer: ICustomer;
+  card: ICard;
+  order: IOrder;
 };
 
 export interface ICustomer {
   name: string;
   lastname: string;
   email: string;
-  address: IAddress;
 }
 
 export interface IAddress {
-    address1: string;
-    address2: string | null;
-    city: string;
-    state: string;
-    zipCode: string;
-  }
+  address1: string;
+  address2: string | null;
+  city: string;
+  state: string;
+  zipCode: string;
+}
 
 export interface ICard {
   number: string;
