@@ -8,10 +8,11 @@ export interface ICustomer {
   name: string;
   lastname: string;
   email: string;
+  address?: IAddress;
 }
 
 export interface IAddress {
-  address1: string;
+  //address1: string;
   address2: string | null;
   city: string;
   state: string;
