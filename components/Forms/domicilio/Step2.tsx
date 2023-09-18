@@ -35,8 +35,7 @@ const Step2: FC<Step2Props> = ({ data, activeStep, handleNext, handleBack }) => 
     <Stack>
       <form onSubmit={handleSubmit(onSubmit)}>
         <FormProvider {...methods}>
-          <ControlledInput name="address1" label="Dirección" />
-          {/*<ControlledInput name="address2" label="Dirección alternativa" />*/}
+          <ControlledInput name="address" label="Dirección" />
           <ControlledInput name="city" label="Ciudad" />
           <ControlledInput name="state" label="Provincia" />
           <ControlledInput name="zipCode" label="Código postal" />

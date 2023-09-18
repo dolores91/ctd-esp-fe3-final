@@ -4,13 +4,13 @@ export type ICheckout = {
   order: IOrder;
 };
 
+
 export interface ICustomer {
   name: string;
   lastname: string;
   email: string;
   address: IAddress;
 }
-
 export interface IAddress {
   address: string;
   city: string;
@@ -30,6 +30,5 @@ export interface IOrder {
   image: string;
   price: number;
 }
-
 
 
